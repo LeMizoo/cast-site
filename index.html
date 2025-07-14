@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C.A.S.T. — Présentation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    .fade-in-up { opacity: 0; transform: translateY(20px); animation: fadeInUp 1.8s ease-out forwards; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+    .animate-fade-in {
+      animation: fadeIn 1.2s ease-out both;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<header class="w-full bg-white dark:bg-gray-900 shadow-md">
+<!-- En-tête -->
+<header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/80 dark:bg-gray-900/80 shadow-md">
+  <div class="max-w-5xl mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <img src="attachments/r8AvbFsRXuCfFhjxtk4pS.jpeg" alt="Logo C.A.S.T." class="w-20 md:w-28">
+      <button id="menuToggle" class="md:hidden text-indigo-700 dark:text-indigo-300 focus:outline-none text-2xl">☰</button>
+    </div>
+  <nav id="navMenu" class="hidden md:flex flex-col md:flex-row md:justify-center md:space-x-6 mt-4 md:mt-2 text-sm font-medium">
+  <a href="#presentation" class="text-indigo-700 dark:text-indigo-300 hover:underline py-1">Présentation</a>
+  <a href="#videos" class="text-indigo-700 dark:text-indigo-300 hover:underline py-1">Vidéos</a>
+  <a href="#galerie-photos" class="text-indigo-700 dark:text-indigo-300 hover:underline py-1">Photos</a>
+  </nav>
+    <div class="text-center mt-4 md:mt-6">
+      <h1 class="text-2xl md:text-3xl font-bold text-indigo-800 dark:text-indigo-300">C.A.S.T. — Chœur Artistique & Spirituel de Tanà</h1>
+      <p class="mt-2 text-lg italic text-gray-600 dark:text-gray-400 fade-in-up">« Quand l’art devient prière, la musique touche l’âme. »</p>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-5xl mx-auto px-6 pt-[360px] pb-20 space-y-20">
+
+<!-- Slider principal -->
+<section id="slider" class="relative w-full max-w-5xl mx-auto mb-16">
+  <div class="relative overflow-hidden rounded-lg shadow-lg">
+    <div id="sliderImages" class="flex transition-transform duration-700 ease-in-out">
+      <!-- Slide 1 -->
+      <div class="relative w-full flex-shrink-0">
+        <img src="photos/IMG-20250620-WA0005.jpg" class="w-full object-cover h-64 md:h-96" alt="Slide 1">
+        <div class="absolute bottom-4 left-4 bg-black/60 text-white px-4 py-2 rounded shadow animate-fade-in">
+          <h3 class="text-lg font-semibold">Harmonie sacrée</h3>
+          <p class="text-sm">Un instant suspendu dans la cathédrale d’Andohalo</p>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="relative w-full flex-shrink-0">
+        <img src="photos/IMG-20250620-WA0006.jpg" class="w-full object-cover h-64 md:h-96" alt="Slide 2">
+        <div class="absolute bottom-4 left-4 bg-black/60 text-white px-4 py-2 rounded shadow animate-fade-in">
+          <h3 class="text-lg font-semibold">Répétition en lumière</h3>
+          <p class="text-sm">Le souffle du chœur dans l’intimité d’une salle</p>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="relative w-full flex-shrink-0">
+        <img src="photos/IMG-20250620-WA0007.jpg" class="w-full object-cover h-64 md:h-96" alt="Slide 3">
+        <div class="absolute bottom-4 left-4 bg-black/60 text-white px-4 py-2 rounded shadow animate-fade-in">
+          <h3 class="text-lg font-semibold">Portrait du chef</h3>
+          <p class="text-sm">L’âme musicale du C.A.S.T. en un regard</p>
+        </div>
+      </div>
+    </div>
+    <!-- Boutons -->
+    <button onclick="prevSlide()" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/70 hover:bg-white text-gray-800 px-3 py-1 rounded-full shadow">‹</button>
+    <button onclick="nextSlide()" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/70 hover:bg-white text-gray-800 px-3 py-1 rounded-full shadow">›</button>
+  </div>
+</section>
+  <script>// Slider d'images avec légendes
+let currentSlide = 0;
+const slides = document.getElementById("sliderImages");
+const totalSlides = slides.children.length;
+
+function updateSlide() {
+  slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  updateSlide();
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  updateSlide();
+}
+
+// Auto-slide toutes les 6 secondes
+setInterval(nextSlide, 6000);</script></section>
+<!-- Origines -->
+<section id="origines">
+  <div class="md:flex md:items-center md:gap-8 mb-12">
+    <img src="photos/IMG-20250620-WA0005.jpg" alt="Illustration Origines" class="md:w-1/2 rounded shadow mb-4 md:mb-0">
+    <div class="md:w-1/2">
+      <h2 class="text-2xl font-semibold text-indigo-700 dark:text-indigo-300 mb-4">Origines et Vision</h2>
+      <p>Fondé en mars 2003 à Antananarivo, le <strong>C.A.S.T.</strong> est un ensemble vocal dont l’essence réside dans le souffle sacré de la musique. Il rassemble des choristes issus de toutes les Églises chrétiennes du <em>FFKM</em> — <span class="italic">Fiombonan'ny Fiangonana Kristiana eto Madagasikara</span> — témoignant d’une unité œcuménique profonde.</p>
+      <p class="mt-4">Son Excellence <strong>Liva ANDRIAMANALINARIVO</strong>, président fondateur, a insufflé une vision audacieuse : faire entendre, à travers la voix humaine, l’élévation de l’âme, dans le respect des traditions chrétiennes et culturelles malgaches.</p>
+      <p class="mt-4">À ses côtés, <strong>Maître Éric RASAMIMANANA</strong>, cofondateur et directeur musical, enracine chaque interprétation dans une rigueur musicale exigeante et un amour sincère du sacré.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Lieux -->
+<section id="lieux">
+  <div class="md:flex md:items-center md:gap-8 mb-12 flex-col-reverse md:flex-row-reverse">
+    <img src="photos/IMG-20250620-WA0006.jpg" alt="Illustration Lieux" class="md:w-1/2 rounded shadow mt-4 md:mt-0">
+    <div class="md:w-1/2">
+      <h2 class="text-2xl font-semibold text-indigo-700 dark:text-indigo-300 mb-4">Lieux d’interprétation</h2>
+      <p>Le C.A.S.T. fait vibrer les murs des églises et cathédrales emblématiques de la capitale :</p>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>Cathédrale d’Andohalo</li>
+        <li>Paroisse Internationale Andohalo</li>
+        <li>Église catholique de Faravohitra</li>
+        <li>Église catholique Saint Michel Itaosy</li>
+        <li>FJKM Itaosy</li>
+        <li>FJKM Ambohitinibe Andakana</li>
+        <li>Et bien d’autres lieux chrétiens</li>
+      </ul>
+      <p class="mt-2">Chaque voûte devient chambre de résonance pour des œuvres inspirées.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Répertoire -->
+<section id="repertoire">
+  <div class="md:flex md:items-center md:gap-8 mb-12">
+    <img src="photos/IMG-20250620-WA0007.jpg" alt="Illustration Répertoire" class="md:w-1/2 rounded shadow mb-4 md:mb-0">
+    <div class="md:w-1/2">
+      <h2 class="text-2xl font-semibold text-indigo-700 dark:text-indigo-300 mb-4">Répertoire</h2>
+      <p>Le répertoire du chœur embrasse les chefs-d’œuvre de :</p>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>George Frideric Handel</li>
+        <li>Joseph Haydn</li>
+        <li>Wolfgang Amadeus Mozart</li>
+        <li>Johann Sebastian Bach</li>
+        <li>Antonín Dvořák</li>
+      </ul>
+      <p class="mt-4">Il s’ouvre également à des compositions sacrées malgaches contemporaines de :</p>
+      <ul class="list-disc list-inside mt-2 space-y-1">
+        <li>Rémi Andriantsoavina</li>
+        <li>Solo Rakotoarimanana</li>
+        <li>Zo Maminirina</li>
+        <li>Éric Rasamimanana</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Collaborations -->
+<section id="collaborations">
+  <div class="md:flex md:items-center md:gap-8 mb-12 flex-col-reverse md:flex-row-reverse">
+    <img src="photos/IMG-20250620-WA0009.jpg" alt="Illustration Collaborations" class="md:w-1/2 rounded shadow mt-4 md:mt-0">
+    <div class="md:w-1/2">
+      <h2 class="text-2xl font-semibold text-indigo-700 dark:text-indigo-300 mb-4">Collaborations musicales</h2>
+      <p>Le C.A.S.T. collabore avec des musiciens classiques professionnels de haut niveau, sous la direction du maestro <strong>Casimir R.</strong> et du <strong>Quatuor Squad</strong>, dont la sensibilité et la rigueur apportent force et justesse à chaque interprétation.</p>
+    </div>
+    </section>
+
+    <!-- Section Galerie Vidéo interactive -->
+    <section id="videos" class="text-center">
+      <h2 class="text-2xl font-semibold text-indigo-700 dark:text-indigo-300 mb-6">🎥 Galerie Vidéo du C.A.S.T.</h2>
+      <div class="relative w-full max-w-4xl mx-auto mb-4 transition-all duration-700 ease-out opacity-0 translate-y-4" id="videoPlayerContainer">
+        <video id="mainVideo" controls class="w-full rounded-lg shadow-lg fade-transition">
+          <source src="videos/VID-20250622-WA0000.mp4" type="video/mp4">
+        </video>
+        <p id="videoCaption" class="mt-4 text-indigo-700 dark:text-indigo-300 text-sm md:text-base opacity-0 transition-opacity duration-700">Répétition du C.A.S.T. – ambiance studieuse</p>
+        <button onclick="toggleFullscreen()" class="absolute bottom-4 right-4 bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1 rounded shadow-md text-sm">⛶ Plein écran</button>
+      </div>
+
+      <!-- Miniatures -->
+      <div class="relative overflow-x-auto whitespace-nowrap px-2 py-4" id="thumbnailCarousel">
+        <div class="inline-flex gap-4">
+          <button id="thumb1" onclick="switchVideo('videos/VID-20250622-WA0000.mp4', 0)" class="group relative">
+            <img src="thumbnails/thumb1.jpg" class="w-40 h-24 object-cover rounded-md shadow-md group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none hidden" id="icon1">
+              <div class="w-10 h-10 bg-white/80 rounded-full flex items-center justify-center animate-pulse">▶</div>
+            </div>
+            <p class="mt-2 text-sm text-indigo-700 dark:text-indigo-300">Répétition</p>
+          </button>
+          <button id="thumb2" onclick="switchVideo('videos/VID-20250622-WA0001.mp4', 1)" class="group relative">
+            <img src="thumbnails/thumb2.jpg" class="w-40 h-24 object-cover rounded-md shadow-md group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none hidden" id="icon2">
+              <div class="w-10 h-10 bg-white/80 rounded-full flex items-center justify-center animate-pulse">▶</div>
+            </div>
+            <p class="mt-2 text-sm text-indigo-700 dark:text-indigo-300">Concert</p>
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <button onclick="openModal()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-full shadow-md transition">🎬 Voir toutes les vidéos</button>
+      </div>
+    </section>
+
+    <!-- Modale vidéo -->
+    <div id="videoModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+      <div class="bg-white dark:bg-gray-900 rounded-lg shadow-xl max-w-4xl w-full p-6 relative">
+        <button onclick="closeModal()" class="absolute top-3 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold">&times;</button>
+        <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-300 mb-4 text-center">🎥 Toutes les vidéos</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <video controls class="w-full rounded shadow"><source src="videos/VID-20250622-WA0000.mp4" type="video/mp4"></video>
+          <video controls class="w-full rounded shadow"><source src="videos/VID-20250622-WA0001.mp4" type="video/mp4"></video>
+          <video controls class="w-full rounded shadow"><source src="videos/VID-20250622-WA0002.mp4" type="video/mp4"></video>
+          <video controls class="w-full rounded shadow"><source src="videos/VID-20250622-WA0003.mp4" type="video/mp4"></video>
+          <video controls class="w-full rounded shadow"><source src="videos/VID-20250622-WA0004.mp4" type="video/mp4"></video>
+        </div>
+      </div>
+    </div>
+    <!-- Section Galerie Photo avec filtres -->
+    <section id="galerie-photos" class="mt-16 text-center">
+      <h2 class="text-2xl font-semibold text-indigo-700 dark:text-indigo-300 mb-4">📷 Galerie Photo</h2>
+
+      <!-- Filtres -->
+      <div class="flex justify-center gap-4 mb-6 flex-wrap">
+        <button onclick="filterPhotos('all')" class="filter-btn bg-indigo-600 text-white px-4 py-1 rounded-full hover:bg-indigo-700">Tous</button>
+        <button onclick="filterPhotos('concert')" class="filter-btn bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-4 py-1 rounded-full hover:bg-indigo-500 hover:text-white">Concerts</button>
+        <button onclick="filterPhotos('repetition')" class="filter-btn bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-4 py-1 rounded-full hover:bg-indigo-500 hover:text-white">Répétitions</button>
+        <button onclick="filterPhotos('portrait')" class="filter-btn bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-4 py-1 rounded-full hover:bg-indigo-500 hover:text-white">Portraits</button>
+        <button onclick="filterPhotos('vie')" class="filter-btn bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-4 py-1 rounded-full hover:bg-indigo-500 hover:text-white">Vie du groupe</button>
+      </div>
+
+      <!-- Miniatures -->
+      <div id="photoGrid" class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+        <img src="photos/photo1.jpg" alt="Concert" data-category="concert" onclick="openPhotoModal(0)" class="rounded shadow cursor-pointer hover:scale-105 transition-transform duration-300">
+        <img src="photos/photo2.jpg" alt="Répétition" data-category="repetition" onclick="openPhotoModal(1)" class="rounded shadow cursor-pointer hover:scale-105 transition-transform duration-300">
+        <img src="photos/photo3.jpg" alt="Portrait" data-category="portrait" onclick="openPhotoModal(2)" class="rounded shadow cursor-pointer hover:scale-105 transition-transform duration-300">
+        <img src="photos/photo4.jpg" alt="Gourmandise 1" data-category="vie" onclick="openPhotoModal(3)" class="rounded shadow cursor-pointer hover:scale-105 transition-transform duration-300">
+        <img src="photos/photo5.jpg" alt="Gourmandise 2" data-category="vie" onclick="openPhotoModal(4)" class="rounded shadow cursor-pointer hover:scale-105 transition-transform duration-300">
+        <img src="photos/photo6.jpg" alt="Gourmandise 3" data-category="vie" onclick="openPhotoModal(5)" class="rounded shadow cursor-pointer hover:scale-105 transition-transform duration-300">
+        <img src="photos/photo7.jpg" alt="Gourmandise 4" data-category="vie" onclick="openPhotoModal(6)" class="rounded shadow cursor-pointer hover:scale-105 transition-transform duration-300">
+        <img src="photos/photo8.jpg" alt="Gourmandise 5" data-category="vie" onclick="openPhotoModal(7)" class="rounded shadow cursor-pointer hover:scale-105 transition-transform duration-300">
+        <img src="photos/IMG-20250620-WA0005.jpg" alt="Gourmandise 6" data-category="vie" onclick="openPhotoModal(8)" class="rounded shadow cursor-pointer hover:scale-105 transition-transform duration-300">
+        <img src="photos/IMG-20250620-WA0006.jpg" alt="Gourmandise 7" data-category="vie" onclick="openPhotoModal(9)" class="rounded shadow cursor-pointer hover:scale-105 transition-transform duration-300">
+        <img src="photos/IMG-20250620-WA0007.jpg" alt="Gourmandise 8" data-category="vie" onclick="openPhotoModal(10)" class="rounded shadow cursor-pointer hover:scale-105 transition-transform duration-300">
+        <img src="photos/IMG-20250620-WA0008.jpg" alt="Gourmandise 9" data-category="vie" onclick="openPhotoModal(11)" class="rounded shadow cursor-pointer hover:scale-105 transition-transform duration-300">
+        <img src="photos/IMG-20250620-WA0009.jpg" alt="Gourmandise 10" data-category="vie" onclick="openPhotoModal(12)" class="rounded shadow cursor-pointer hover:scale-105 transition-transform duration-300">
+        <img src="photos/IMG-20250620-WA0010.jpg" alt="Gourmandise 11" data-category="vie" onclick="openPhotoModal(13)" class="rounded shadow cursor-pointer hover:scale-105 transition-transform duration-300">
+      </div>
+    </section>
+
+    <!-- Modale photo -->
+    <div id="photoModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+      <button onclick="closePhotoModal()" class="absolute top-4 right-6 text-white text-3xl font-bold hover:text-red-400">&times;</button>
+      <button onclick="prevPhoto()" class="absolute left-4 text-white text-4xl font-bold hover:text-indigo-300">&#10094;</button>
+      <img id="modalImage" src="" alt="Photo en grand" class="max-h-[90vh] max-w-[90vw] rounded shadow-lg transition-opacity duration-500">
+      <p id="photoCaption" class="absolute bottom-6 text-white text-sm md:text-base bg-black/50 px-4 py-2 rounded transition-opacity duration-500 opacity-0"></p>
+      <button onclick="nextPhoto()" class="absolute right-4 text-white text-4xl font-bold hover:text-indigo-300">&#10095;</button>
+    </div>
+<script>
+  // Menu responsive
+  const toggleBtn = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+  toggleBtn?.addEventListener("click", () => {
+    navMenu.classList.toggle("hidden");
+    navMenu.classList.toggle("flex");
+    navMenu.classList.toggle("flex-col");
+    navMenu.classList.toggle("mt-4");
+  });
+
+  // Slider vidéo
+  const mainVideo = document.getElementById("mainVideo");
+  const container = document.getElementById("videoPlayerContainer");
+  const captionEl = document.getElementById("videoCaption");
+  const thumbnails = [document.getElementById("thumb1"), document.getElementById("thumb2")];
+  const icons = [document.getElementById("icon1"), document.getElementById("icon2")];
+  const captions = [
+    "Répétition du C.A.S.T. – ambiance studieuse",
+    "Extrait de concert – Cathédrale d’Andohalo"
+  ];
+
+  function switchVideo(src, activeIndex) {
+    mainVideo.classList.add("fade-out");
+    captionEl.classList.remove("opacity-100");
+    captionEl.classList.add("opacity-0");
+
+    setTimeout(() => {
+      mainVideo.pause();
+      mainVideo.querySelector("source").src = src;
+      mainVideo.load();
+      mainVideo.play();
+      mainVideo.classList.remove("fade-out");
+
+      thumbnails.forEach((thumb, i) => {
+        thumb.classList.toggle("active-thumb", i === activeIndex);
+        icons[i].classList.toggle("hidden", i !== activeIndex);
+      });
+
+      captionEl.textContent = captions[activeIndex];
+      captionEl.classList.remove("opacity-0");
+      captionEl.classList.add("opacity-100");
+    }, 400);
+  }
+
+  function toggleFullscreen() {
+    if (mainVideo.requestFullscreen) mainVideo.requestFullscreen();
+    else if (mainVideo.webkitRequestFullscreen) mainVideo.webkitRequestFullscreen();
+    else if (mainVideo.msRequestFullscreen) mainVideo.msRequestFullscreen();
+  }
+
+  // Auto-scroll miniatures
+  const carousel = document.getElementById("thumbnailCarousel");
+  setInterval(() => {
+    carousel.scrollBy({ left: 200, behavior: 'smooth' });
+    if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
+      carousel.scrollTo({ left: 0, behavior: 'smooth' });
+    }
+  }, 7000);
+
+  // Modale vidéo
+  const modal = document.getElementById("videoModal");
+  function openModal() { modal.classList.remove("hidden"); }
+  function closeModal() {
+    modal.classList.add("hidden");
+    modal.querySelectorAll("video").forEach(v => v.pause());
+  }
+  modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+
+  // Galerie photo
+  const photoGrid = document.getElementById("photoGrid");
+  const allPhotos = Array.from(photoGrid.children);
+  function filterPhotos(category) {
+    localStorage.setItem("activeFilter", category);
+    allPhotos.forEach((img) => {
+      const match = category === 'all' || img.dataset.category === category;
+      img.classList.toggle("hidden", !match);
+    });
+    document.querySelectorAll(".filter-btn").forEach(btn => {
+      btn.classList.remove("bg-indigo-600", "text-white");
+      btn.classList.add("bg-gray-200", "dark:bg-gray-700", "text-gray-800", "dark:text-gray-100");
+    });
+    event.target.classList.add("bg-indigo-600", "text-white");
+  }
+
+  // Appliquer filtre au chargement
+  window.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => container.classList.remove("opacity-0", "translate-y-4"), 300);
+    const savedFilter = localStorage.getItem("activeFilter") || "all";
+    const btn = [...document.querySelectorAll(".filter-btn")].find(b => b.textContent.toLowerCase().includes(savedFilter));
+    if (btn) btn.click();
+  });
+
+  // Modale photo
+  const photoModal = document.getElementById("photoModal");
+  const modalImage = document.getElementById("modalImage");
+  const photoCaption = document.getElementById("photoCaption");
+  const photoSources = [
+    { src: "photos/photo1.jpg", caption: "Concert à Andohalo" },
+    { src: "photos/photo2.jpg", caption: "Répétition avec le Quatuor Squad" },
+    { src: "photos/photo3.jpg", caption: "Portrait du chef de chœur" },
+    { src: "photos/photo4.jpg", caption: "Moment de convivialité au restaurant Gourmandise après une répétition" },
+    { src: "photos/photo5.jpg", caption: "Repas partagé entre choristes dans une ambiance fraternelle" },
+    { src: "photos/photo6.jpg", caption: "Repas fraternel du C.A.S.T. — partage et complicité autour de la table" },
+    { src: "photos/photo7.jpg", caption: "Repas du C.A.S.T. au restaurant Gourmandise — ambiance conviviale et festive" },
+    { src: "photos/photo8.jpg", caption: "Moment de partage au restaurant Gourmandise — entre rires, plats et fraternité" },
+    { src: "photos/IMG-20250620-WA0005.jpg", caption: "Moment de partage au restaurant Gourmandise — ambiance chaleureuse" },
+    { src: "photos/IMG-20250620-WA0006.jpg", caption: "Repas fraternel entre choristes — complicité et sourires" },
+    { src: "photos/IMG-20250620-WA0007.jpg", caption: "Table conviviale du C.A.S.T. — entre échanges et éclats de rire" },
+    { src: "photos/IMG-20250620-WA0008.jpg", caption: "Instant de détente après répétition — le chœur autour d’un bon repas" },
+    { src: "photos/IMG-20250620-WA0009.jpg", caption: "Ambiance festive au restaurant — souvenirs partagés" },
+    { src: "photos/IMG-20250620-WA0010.jpg", caption: "Choristes réunis autour de la table — chaleur humaine et fraternité musicale" }
+  ];
+  let currentPhotoIndex = 0;
+  let photoInterval;
+
+  function updatePhotoModal() {
+    modalImage.src = photoSources[currentPhotoIndex].src;
+    photoCaption.textContent = photoSources[currentPhotoIndex].caption;
+    photoCaption.classList.remove("opacity-0");
+    photoCaption.classList.add("opacity-100");
+  }
+
+  function openPhotoModal(index) {
+    currentPhotoIndex = index;
+    photoModal.classList.remove("hidden");
+    updatePhotoModal();
+    photoInterval = setInterval(() => nextPhoto(), 6000);
+  }
+
+  function closePhotoModal() {
+    photoModal.classList.add("hidden");
+    clearInterval(photoInterval);
+    photoCaption.classList.remove("opacity-100");
+    photoCaption.classList.add("opacity-0");
+  }
+
+  function nextPhoto() {
+    currentPhotoIndex = (currentPhotoIndex + 1) % photoSources.length;
+    updatePhotoModal();
+  }
+
+  function prevPhoto() {
+    currentPhotoIndex = (currentPhotoIndex - 1 + photoSources.length) % photoSources.length;
+    updatePhotoModal();
+  }
+
+  photoModal.addEventListener("click", (e) => {
+    if (e.target === photoModal) closePhotoModal();
+  });
+</script>
+<!-- Pied de page enrichi -->
+<footer class="mt-24 border-t border-gray-300 dark:border-gray-700 pt-10 pb-16 text-center text-sm text-gray-600 dark:text-gray-400 relative">
+  <div class="max-w-4xl mx-auto px-4 space-y-4">
+    <p>© 2003–2025 <strong>C.A.S.T.</strong> — Chœur Artistique & Spirituel de Tanà</p>
+    <p class="italic">« Quand l’art devient prière, la musique touche l’âme. »</p>
+    <p>Site conçu avec ❤️ par <span class="text-indigo-700 dark:text-indigo-300 font-medium">Tovoniaina RAHENDRISON</span></p>
+
+    <!-- Liens rapides -->
+    <div class="flex justify-center gap-6 text-indigo-600 dark:text-indigo-300 text-sm mt-4">
+      <a href="#origines" class="hover:underline">Origines</a>
+      <a href="#videos" class="hover:underline">Vidéos</a>
+      <a href="#galerie-photos" class="hover:underline">Photos</a>
+    </div>
+
+    <!-- Réseaux sociaux -->
+    <div class="flex justify-center gap-6 mt-6 text-xl text-indigo-600 dark:text-indigo-300">
+      <a href="https://facebook.com" target="_blank" title="Facebook" class="hover:text-indigo-800">📘</a>
+      <a href="https://youtube.com" target="_blank" title="YouTube" class="hover:text-red-600">▶️</a>
+      <a href="mailto:contact@cast.mg" title="Email" class="hover:text-indigo-800">✉️</a>
+    </div>
+
+    <!-- Formulaire de contact -->
+    <form class="mt-8 max-w-md mx-auto text-left space-y-4">
+      <h3 class="text-indigo-700 dark:text-indigo-300 font-semibold text-center">📬 Contactez-nous</h3>
+      <input type="text" placeholder="Votre nom" class="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+      <input type="email" placeholder="Votre email" class="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+      <textarea rows="4" placeholder="Votre message" class="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+      <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded shadow">Envoyer</button>
+    </form>
+  </div>
+</footer>
+
+<!-- Bouton retour en haut -->
+<button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+  class="fixed bottom-6 right-6 bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-full shadow-lg text-xl z-50"
+  title="Retour en haut">⬆️</button>
+</body>
+</html>
