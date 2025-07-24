@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>C.A.S.T.</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <div style="background:#23282d;color:#fff;padding:5px 20px;font-size:14px;">
-    <span>Admin Bar - C.A.S.T.</span>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>C.A.S.T.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <header class="bg-white border-bottom">
-    <div class="container d-flex align-items-center justify-content-between py-3">
-      <a href="index.html" class="d-flex align-items-center">
-        <img src="images/logo-cast.png" alt="Logo C.A.S.T." height="60" style="margin-right:15px;">
-        <span class="fs-3 fw-bold text-dark">C.A.S.T.</span>
-      </a>
-      <nav>
-        <ul class="nav">
-          <li class="nav-item"><a class="nav-link text-dark" href="index.html">Accueil</a></li>
-          <li class="nav-item"><a class="nav-link text-dark" href="presentation.html">Présentation</a></li>
-          <li class="nav-item"><a class="nav-link text-dark" href="inspiration.html">Inspiration</a></li>
-          <li class="nav-item"><a class="nav-link text-dark" href="gallery.html">Multimédia</a></li>
-          <li class="nav-item"><a class="nav-link text-dark" href="engagements.html">Engagements</a></li>
-          <li class="nav-item"><a class="nav-link text-dark" href="dashboard.html">Dashboard</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <!-- 🎨 Chargement dynamique du head -->
+    <script>
+      fetch("components/head.html")
+        .then(res => res.text())
+        .then(data => {
+          document.head.insertAdjacentHTML("beforeend", data);
+        });
+    </script>
+  </head>
 
-  <section class="text-center text-light py-5" style="background-image: url('images/photo-choeur.jpeg'); background-size: cover; background-position: center;">
+  <body>
+    <!-- 🔝 Menu dynamique -->
+    <div id="header-placeholder"></div>
+    <script>
+      fetch("components/header.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
+    </script>
+
+    <!-- 🌟 Citation d’accueil -->
+    <section class="bg-light text-center py-3">
+      <p id="citation-dynamique" class="fst-italic text-secondary mb-0">
+        « Ce que vous entendrez aujourd’hui, ce ne sont pas des voix… Ce sont des âmes en prière. »
+      </p>
+    </section>
+
+    <!-- 🎶 Contenu principal -->
+    <main class="container py-5 text-center">
+  <section class="text-center text-light py-5" style="background-image: url('assets/images/photo-choeur.jpeg'); background-size: cover; background-position: center;">
     <div class="bg-opacity-75 p-4 rounded">
       <h1 class="display-5 fw-bold">L’harmonie de la foi et de l’art</h1>
       <p class="lead mt-3">Découvrez comment la musique unit les âmes à travers la puissance de la voix humaine.</p>
@@ -42,7 +46,7 @@
   <section class="container py-5">
     <div class="row align-items-center">
       <div class="col-md-6">
-        <img src="images/photo-choeur.jpeg" alt="À propos du C.A.S.T." class="img-fluid rounded shadow">
+        <img src="assets/images/galerie2.jpg" alt="À propos du C.A.S.T." class="img-fluid rounded shadow">
       </div>
       <div class="col-md-6">
         <h2 class="mb-3">À propos</h2>
@@ -63,7 +67,7 @@
       <div class="row">
         <div class="col-md-4 mb-4">
           <div class="card shadow-sm">
-            <img src="images/inspiration1.jpg" alt="Inspiration 1" class="card-img-top">
+            <img src="assets/images/inspiration1.jpg" alt="Inspiration 1" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">La Musique</h5>
               <p class="card-text">Explorez comment la musique sacrée et profane inspire notre répertoire et nos performances.</p>
@@ -73,7 +77,7 @@
         </div>
         <div class="col-md-4 mb-4">
           <div class="card shadow-sm">
-            <img src="images/inspiration2.jpg" alt="Inspiration 2" class="card-img-top">
+            <img src="assets/images/inspiration2.jpg" alt="Inspiration 2" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">L'Art</h5>
               <p class="card-text">Laissez-vous inspirer par la beauté de l'art visuel et de la scénographie qui accompagnent nos concerts.</p>
@@ -83,7 +87,7 @@
         </div>
         <div class="col-md-4 mb-4">
           <div class="card shadow-sm">
-            <img src="images/inspiration3.jpg" alt="Inspiration 3" class="card-img-top">
+            <img src="assets/images/inspiration3.jpg" alt="Inspiration 3" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">La Spiritualité</h5>
               <p class="card-text">Découvrez comment la spiritualité chrétienne nourrit notre engagement et notre passion.</p>
@@ -99,18 +103,18 @@
     <h2 class="text-center mb-4">Galerie</h2>
     <div class="row">
       <div class="col-md-4 mb-4">
-        <a href="images/galerie1.jpg" class="d-block mb-3" data-bs-toggle="lightbox" data-gallery="gallery">
-          <img src="images/galerie1.jpg" alt="Galerie 1" class="img-fluid rounded shadow">
+        <a href="assets/images/IMG-20250620-WA0005.jpg" class="d-block mb-3" data-bs-toggle="lightbox" data-gallery="gallery">
+          <img src="assets/images/IMG-20250620-WA0005.jpg" alt="Galerie 1" class="img-fluid rounded shadow">
         </a>
       </div>
       <div class="col-md-4 mb-4">
-        <a href="images/galerie2.jpg" class="d-block mb-3" data-bs-toggle="lightbox" data-gallery="gallery">
-          <img src="images/galerie2.jpg" alt="Galerie 2" class="img-fluid rounded shadow">
+        <a href="assets/images/galerie2.jpg" class="d-block mb-3" data-bs-toggle="lightbox" data-gallery="gallery">
+          <img src="assets/images/galerie2.jpg" alt="Galerie 2" class="img-fluid rounded shadow">
         </a>
       </div>
       <div class="col-md-4 mb-4">
-        <a href="images/galerie3.jpg" class="d-block mb-3" data-bs-toggle="lightbox" data-gallery="gallery">
-          <img src="images/galerie3.jpg" alt="Galerie 3" class="img-fluid rounded shadow">
+        <a href="assets/images/galerie3.jpg" class="d-block mb-3" data-bs-toggle="lightbox" data-gallery="gallery">
+          <img src="assets/images/galerie3.jpg" alt="Galerie 3" class="img-fluid rounded shadow">
         </a>
       </div>
     </div>
@@ -176,10 +180,39 @@
       </div>
     </div>
   </section>
+<section class="poetic-home bg-light py-5">
+  <div class="container text-center">
+    <h2 class="mb-4">Écouter autrement</h2>
+    <p class="fst-italic poetic-intro-phrase mb-4">
+      « Il arrive que la voix dise ce que le cœur n’ose penser. »
+    </p>
+    <a href="notre-voix.html" class="btn btn-outline-primary">
+      Entrer dans notre voix intérieure
+    </a>
+  </div>
+</section>
+    </main>
 
-  <footer class="bg-dark text-light text-center py-3 mt-5">
-    <small>&copy; 2025 Chœur Artistique & Spirituel de Tanà. Tous droits réservés.</small>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <!-- 🔻 Pied de page dynamique -->
+    <div id="footer-placeholder"></div>
+    <script>
+      fetch("components/footer.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+
+          // ✅ Charge Bootstrap JS après insertion des composants
+          const bootstrapScript = document.createElement("script");
+          bootstrapScript.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js";
+          document.body.appendChild(bootstrapScript);
+
+          // ✅ Charge ton script principal ensuite
+          bootstrapScript.onload = () => {
+            const mainScript = document.createElement("script");
+            mainScript.src = "assets/js/scripts.js";
+            document.body.appendChild(mainScript);
+          };
+        });
+    </script>
+  </body>
 </html>
