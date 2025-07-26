@@ -1,108 +1,156 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Dashboard — C.A.S.T.</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <title>Espace membre — C.A.S.T.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Chargement dynamique du head -->
-    <script>
-      fetch("components/head.html")
-        .then(res => res.text())
-        .then(data => {
-          document.head.insertAdjacentHTML("beforeend", data);
-        });
-    </script>
+  <!-- Chargement dynamique du head -->
+  <script>
+    fetch("components/head.html")
+      .then(res => res.text())
+      .then(data => {
+        document.head.insertAdjacentHTML("beforeend", data);
+      });
+  </script>
 
-    <!-- Style local optionnel -->
-    <style>
-      .upload-zone {
-        border: 2px dashed #ccc;
-        padding: 2rem;
-        text-align: center;
-        background-color: #f0f8ff;
-        border-radius: 8px;
-      }
-      .upload-zone:hover {
-        background-color: #e0f0ff;
-        cursor: pointer;
-      }
-    </style>
-  </head>
+  <!-- Style local pour upload -->
+  <style>
+    .upload-zone {
+      border: 2px dashed #ccc;
+      padding: 2rem;
+      text-align: center;
+      background-color: #f0f8ff;
+      border-radius: 8px;
+    }
+    .upload-zone:hover {
+      background-color: #e0f0ff;
+      cursor: pointer;
+    }
+  </style>
 
-  <body>
-    <!-- 🔝 Menu dynamique -->
-    <div id="header-placeholder"></div>
-    <script>
-      fetch("components/header.html")
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById("header-placeholder").innerHTML = data;
-        });
-    </script>
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
 
-    <!-- 🌟 Citation -->
-    <section class="bg-light text-center py-3">
-      <p id="citation-dynamique" class="fst-italic text-secondary mb-0">
-        « Derrière chaque voix, il y a une intention. Derrière chaque fichier, une offrande sonore. »
+<body>
+  <!-- 🔝 Menu dynamique -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("components/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+      });
+  </script>
+
+  <!-- 🌟 Citation -->
+  <section class="bg-light text-center py-3">
+    <p id="citation-dynamique" class="fst-italic text-secondary mb-0">
+      « Derrière chaque voix, il y a une intention. Derrière chaque fichier, une offrande sonore. »
+    </p>
+  </section>
+
+  <!-- 🎯 Accès Membre -->
+  <section class="section membre-access">
+    <div class="container">
+      <h2 class="section-title">🎶 Espace Membre</h2>
+      <p class="section-intro">
+        <strong>Bienvenue !</strong> Connectez-vous pour accéder à votre tableau de bord,<br>
+        ou inscrivez-vous pour rejoindre la famille du Chœur Artistique & Spirituel de Tanà.
       </p>
-    </section>
-<section class="container my-5">
-  <div class="text-center">
-    <h3 class="mb-4">Accès Membre — CAST</h3>
-    <p class="text-muted">Êtes-vous déjà membre du Chœur Artistique & Spirituel ?</p>
 
-    <div class="d-flex justify-content-center gap-3 mt-3">
-      <a href="connexion.html" class="btn btn-success">Je suis déjà membre</a>
-      <a href="inscription.html" class="btn btn-outline-primary">Je souhaite m’inscrire</a>
+      <div class="button-group">
+        <button id="btn-deja" class="btn btn-primary">Se connecter</button>
+        <button id="btn-nouveau" class="btn btn-secondary">S’inscrire</button>
+      </div>
+
+      <!-- 🔐 Formulaires -->
+      <div id="formulaire-auth" class="mt-4" style="display: none;">
+        <form id="form-connexion" style="display: none;">
+          <h4>Connexion</h4>
+          <input type="email" id="email-login" class="form-control mb-2" placeholder="Email" required />
+          <input type="password" id="password-login" class="form-control mb-2" placeholder="Mot de passe" required />
+          <button type="submit" class="btn btn-success">Se connecter</button>
+        </form>
+
+        <form id="form-inscription" style="display: none;">
+          <h4>Inscription</h4>
+          <input type="text" id="nom" class="form-control mb-2" placeholder="Nom" required />
+          <input type="text" id="prenom" class="form-control mb-2" placeholder="Prénom" required />
+          <input type="email" id="email-signup" class="form-control mb-2" placeholder="Email" required />
+          <input type="email" id="confirm-email" class="form-control mb-2" placeholder="Confirmer l’email" required />
+          <input type="password" id="password-signup" class="form-control mb-2" placeholder="Mot de passe" required />
+          <input type="password" id="confirm-password" class="form-control mb-2" placeholder="Confirmer le mot de passe" required />
+          <button type="submit" class="btn btn-outline-primary">S’inscrire</button>
+        </form>
+      </div>
+
+      <div class="divider"><span>ou</span></div>
+
+      <div class="social-login">
+        <button id="login-google" class="btn btn-google">Connexion avec Google</button>
+        <button id="login-facebook" class="btn btn-facebook">Connexion avec Facebook</button>
+      </div>
+
+      <p class="section-note">
+        🎤 Vous pourrez bientôt partager vos créations vocales et recevoir des inspirations du chœur.
+      </p>
     </div>
-  </div>
-</section>
-    <!-- 🎛️ Interface principale -->
-    <main class="container py-5">
-      <h2 class="text-center mb-4">Espace membre — C.A.S.T.</h2>
+  </section>
 
-      <!-- 🔐 Connexion / Déconnexion -->
-      <div class="text-center mb-4">
-        <button id="login-btn" class="btn btn-success me-2">Se connecter</button>
-        <button id="logout-btn" class="btn btn-danger">Se déconnecter</button>
-      </div>
+  <!-- 📁 Zone d’upload -->
+  <section class="container mb-5">
+    <div class="upload-zone" id="upload-zone">
+      <p class="mb-2">Déposez vos fichiers ici ou cliquez pour choisir</p>
+      <input type="file" id="fileInput" multiple accept="image/*,audio/*,video/*" hidden />
+      <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">Choisir un fichier</button>
+    </div>
 
-      <!-- 📁 Zone d’upload -->
-      <div class="upload-zone mb-5" id="upload-zone">
-        <p class="mb-2">Déposez vos fichiers ici ou cliquez pour choisir</p>
-        <input type="file" id="fileInput" multiple accept="image/*,audio/*,video/*" hidden />
-        <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">Choisir un fichier</button>
-      </div>
+    <!-- 🖼️ Aperçu des fichiers -->
+    <div id="media-gallery" class="row g-4 mt-4">
+      <!-- Les fichiers ajoutés apparaîtront ici via JS -->
+    </div>
+  </section>
 
-      <!-- 🖼️ Aperçu des fichiers uploadés -->
-      <div id="media-gallery" class="row g-4">
-        <!-- Les fichiers ajoutés apparaîtront ici via JS -->
-      </div>
-    </main>
+  <!-- 🖼️ Galerie dynamique -->
+  <section id="galerie-placeholder"></section>
+  <script>
+    fetch("components/galerie.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("galerie-placeholder").innerHTML = data;
+      });
+  </script>
 
-    <!-- 🔻 Pied de page + scripts -->
-    <div id="footer-placeholder"></div>
-    <script>
-      fetch("components/footer.html")
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById("footer-placeholder").innerHTML = data;
+  <!-- 🔻 Pied de page -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("components/footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
 
-          // Bootstrap JS
-          const bootstrapScript = document.createElement("script");
-          bootstrapScript.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js";
-          document.body.appendChild(bootstrapScript);
+        // Bootstrap JS
+        const bootstrapScript = document.createElement("script");
+        bootstrapScript.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js";
+        document.body.appendChild(bootstrapScript);
 
-          // Scripts custom (après Bootstrap)
-          bootstrapScript.onload = () => {
-            const mainScript = document.createElement("script");
-            mainScript.src = "assets/js/scripts.js";
-            document.body.appendChild(mainScript);
-
-            // Future : Firebase SDK ici
-          };
-        });
-    </script>
-  </body>
+        // JS custom chargé après Bootstrap
+        bootstrapScript.onload = () => {
+          const scripts = [
+            "assets/js/firebase-auth.js",
+            "assets/js/authForms.js",
+            "assets/js/espace-membre.js"
+          ];
+          scripts.forEach(src => {
+            const s = document.createElement("script");
+            s.type = "module";
+            s.src = src;
+            document.body.appendChild(s);
+          });
+        };
+      });
+  </script>
+</body>
 </html>

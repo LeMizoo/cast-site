@@ -229,3 +229,26 @@ if (googleSignupBtn) {
       });
   });
 }
+// Connexion avec Google
+document.getElementById('login-google').addEventListener('click', () => {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider)
+    .then(result => {
+      console.log('Connecté avec Google:', result.user);
+    })
+    .catch(error => {
+      console.error('Erreur Google:', error);
+    });
+});
+
+// Connexion avec Facebook
+document.getElementById('login-facebook').addEventListener('click', () => {
+  const provider = new firebase.auth.FacebookAuthProvider();
+  firebase.auth().signInWithPopup(provider)
+    .then(result => {
+      console.log('Connecté avec Facebook:', result.user);
+    })
+    .catch(error => {
+      console.error('Erreur Facebook:', error);
+    });
+});

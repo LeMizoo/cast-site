@@ -120,3 +120,120 @@ nav.navbar {
   color: #6c757d;
   animation: fadeInVerse 2s ease;
 }
+.access-section {
+  background: linear-gradient(to right, #f3f3f3, #e8eaf6);
+  border-radius: 10px;
+  padding: 3em 2em;
+  max-width: 600px;
+  margin: 3em auto;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #4a3aff;
+  margin-bottom: 1em;
+}
+
+.intro-text {
+  font-size: 1.1em;
+  line-height: 1.6em;
+  color: #333;
+  margin-bottom: 2em;
+}
+
+.highlight {
+  font-weight: 600;
+  color: #6c63ff;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.btn {
+  padding: 0.75em 1.6em;
+  font-size: 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-login {
+  background-color: #6c63ff;
+  color: white;
+}
+
+.btn-signup {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.btn-login:hover {
+  background-color: #554fd3;
+}
+
+.btn-signup:hover {
+  background-color: #e0aa00;
+}
+
+.upload-area {
+  margin-top: 2em;
+}
+
+.upload-text {
+  margin-bottom: 1em;
+  font-weight: 500;
+  color: #555;
+}
+
+.btn-upload {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.7em 1.4em;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-upload:hover {
+  background-color: #3e9141;
+}
+.social-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  margin-top: 1.5em;
+}
+
+.btn-google {
+  background-color: #db4437;
+  color: white;
+  border: none;
+  padding: 0.8em 1.4em;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-facebook {
+  background-color: #4267B2;
+  color: white;
+  border: none;
+  padding: 0.8em 1.4em;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-google:hover,
+.btn-facebook:hover {
+  opacity: 0.85;
+}

@@ -13,7 +13,8 @@
     </blockquote>
 
     <div class="mb-2">
-      📍 Antananarivo | ✉️ <a href="mailto:positifaid@live.fr" class="text-light text-decoration-underline">positifaid@live.fr</a>
+      📍 Antananarivo | ✉️
+      <a href="mailto:positifaid@live.fr" class="text-light text-decoration-underline">positifaid@live.fr</a>
     </div>
 
     <div>
@@ -23,3 +24,17 @@
     </div>
   </div>
 </footer>
+
+<!-- 📦 Chargement Bootstrap puis JS principal -->
+<script>
+  const bootstrapScript = document.createElement("script");
+  bootstrapScript.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js";
+  document.body.appendChild(bootstrapScript);
+
+  bootstrapScript.onload = () => {
+    const mainScript = document.createElement("script");
+    mainScript.type = "module";
+    mainScript.src = "assets/js/espace-membre.js";
+    document.body.appendChild(mainScript);
+  };
+</script>

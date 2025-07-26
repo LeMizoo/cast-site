@@ -1,38 +1,63 @@
-# C.A.S.T. Project
+# 🌟 CAST — Chœur Artistique & Spirituel de Tanà
 
-## Description
-The C.A.S.T. project is a web application designed to showcase the Chœur Artistique & Spirituel de Tanà. It includes various sections such as information about the choir, inspirational content, a gallery of images, and a contact form.
+Ce projet web présente le Chœur Artistique & Spirituel de Tanà à travers un site statique HTML/JavaScript hébergé sur Vercel. Il met en valeur les valeurs du chœur, ses créations, ses inspirations et offre un espace membre sécurisé.
 
-## Project Structure
-```
-cast-site
-├── scripts
-│   └── update-html.js       # Script to automate HTML updates
-├── css
-│   └── style.css            # Styles for the project
-├── images
-│   └── [vos images ici]     # Directory for image files
-├── index.html                # Main HTML file (homepage)
-├── presentation.html         # Information about the project
-├── inspiration.html          # Inspirational content
-├── gallery.html              # Gallery of images/media
-├── engagements.html          # Commitments of the project
-├── espace-membre.html            # Dashboard for project management
-└── contact.html              # Contact form/information
-```
+---
 
-## Setup Instructions
-1. Clone the repository to your local machine.
-2. Open the project directory in your preferred code editor.
-3. Ensure you have a web server running to view the HTML files in a browser.
+## 🗂️ Arborescence du projet
+📁 cast-site/
+├── index.html                  → Page d'accueil
+├── presentation.html           → Présentation du projet
+├── inspiration.html            → Contenu inspirant
+├── gallery.html                → Galerie d'images
+├── engagements.html            → Valeurs et engagements
+├── espace-membre.html          → Tableau de bord sécurisé
+├── contact.html                → Formulaire de contact
+└── assets/
+    ├── audio/                  → Fichiers audio du chœur
+    ├── css/
+    │   ├── poesie.css          → Styles dédiés aux pages poétiques
+    │   └── style.css           → Styles principaux du site
+    ├── js/
+    │   ├── authForms.js        → Gestion des formulaires d'authentification
+    │   ├── dashboard-scripts.js → Scripts du tableau de bord
+    │   ├── espace-membre.js    → Logique d’interaction de l’espace membre
+    │   ├── firebase-auth.js    → Intégration Firebase (login Google/Facebook)
+    │   ├── header-footer.js    → Insertion dynamique du header et du footer
+    │   ├── member-loader.js    → Chargement des données utilisateur
+    │   ├── profil.js           → Interface de gestion du profil
+    │   └── scripts.js          → Logique générale et améliorations UX
+    ├── images/                 → Médias visuels du chœur
+    └── videos/                 → Contenus vidéo inspirants
 
-## Usage
-- Open `index.html` in your web browser to view the homepage.
-- Navigate through the other HTML files to explore different sections of the project.
-- Use the contact form in `contact.html` to reach out for inquiries or partnerships.
 
-## Automation Script
-The `update-html.js` script automates the process of updating all HTML files in the project. It reads each HTML file, applies necessary updates, and saves the changes. Make sure to run this script whenever you need to apply bulk updates to the HTML files.
+---
 
-## Contribution
-Feel free to contribute to the project by submitting issues or pull requests. Your feedback and contributions are welcome!
+## 🔐 Fonctionnalités clés
+
+- **Responsive design** pour toutes tailles d’écrans
+- **Modularisation JS** pour meilleure maintenabilité
+- **Authentification Firebase** : login via email, Google, Facebook
+- **Validation avancée** des formulaires (`email`, `mot de passe`, `confirmation`)
+- **Insertion dynamique** des composants communs (`header`, `footer`)
+- **Déploiement sur Vercel** avec structure HTML/JS statique
+
+---
+
+## 🚧 À venir
+
+- Pages additionnelles : `engagement.html`, `inspiration.html`, `contact.html`, `gallery.html`
+- Intégration de **Firestore** pour gestion enrichie des membres
+- Amélioration du style (`poesie.css`) pour cohérence artistique
+
+---
+
+## 🤝 Contributeur principal
+
+**Tovoniaina** — développeur passionné par l’harmonie entre esthétique et fonctionnalité web.
+
+---
+
+## 📁 Remarques
+
+Ce dépôt a été nettoyé des anciennes dépendances (PHP, Node.js) pour s’aligner sur le déploiement statique. Le dossier `cast-site` contient uniquement les éléments pertinents au projet actuel.
