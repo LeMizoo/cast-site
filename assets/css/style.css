@@ -1,0 +1,122 @@
+/* 🌍 Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+  line-height: 1.7;
+}
+
+/* 📌 Titres */
+h1, h2, h3 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #343a40;
+  text-align: center;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+
+/* ✨ Boutons */
+.btn-primary {
+  background-color: #6c63ff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #574fd6;
+}
+
+/* 🎶 Citation dynamique */
+#citation-dynamique {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #495057;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* 🧭 Menu actif */
+.nav-link.active {
+  font-weight: bold;
+  color: #ffc107 !important;
+  border-bottom: 2px solid #ffc107;
+}
+
+/* Hover sur menu */
+.nav-link:not(.active):hover {
+  color: #adb5bd !important;
+}
+
+/* 🌗 Pied de page */
+footer {
+  background-color: #343a40;
+  color: #f8f9fa;
+  font-size: 0.95rem;
+}
+
+footer a {
+  color: #f8f9fa;
+}
+
+footer a:hover {
+  color: #ffc107;
+  text-decoration: none;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+
+  .btn-primary {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  nav .navbar-brand span {
+    font-size: 1.3rem;
+  }
+}
+
+/* 🌊 Fluidité du menu */
+.collapse.navbar-collapse {
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdown-menu {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+nav.navbar {
+  animation: fadeInMenu 0.5s ease;
+}
+
+@keyframes fadeInMenu {
+  0% { opacity: 0; transform: translateY(-5px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.poetic-home h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #343a40;
+}
+
+.poetic-intro-phrase {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #6c757d;
+  animation: fadeInVerse 2s ease;
+}

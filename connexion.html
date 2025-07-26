@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion — CAST</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css"> <!-- Ton fichier perso -->
+</head>
+<body>
+  <header id="header"></header> <!-- Insert via JS module -->
+
+  <main class="container my-5">
+    <h2 class="text-center mb-4">Connexion membre</h2>
+
+    <form id="login-form" class="mx-auto" style="max-width: 400px;">
+      <div class="mb-3">
+        <label for="email" class="form-label">Adresse e-mail</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Mot de passe</label>
+        <input type="password" class="form-control" id="password" required>
+      </div>
+      <button type="submit" class="btn btn-success w-100">Se connecter</button>
+      <hr>
+      <button type="button" id="google-login" class="btn btn-outline-danger w-100">
+        <i class="bi bi-google"></i> Connexion avec Google
+      </button>
+      <button type="button" id="facebook-login" class="btn btn-outline-primary w-100 mt-2">
+        <i class="bi bi-facebook"></i> Connexion avec Facebook
+      </button>
+    </form>
+  </main>
+
+  <footer id="footer"></footer> <!-- Insert via JS module -->
+  <script src="js/header-footer.js"></script>
+  <script type="module" src="js/firebase-login.js"></script>
+</body>
+</html>

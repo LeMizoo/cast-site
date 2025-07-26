@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Engagements — C.A.S.T.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Chargement dynamique du head -->
+    <script>
+      fetch("components/head.html")
+        .then(res => res.text())
+        .then(data => {
+          document.head.insertAdjacentHTML("beforeend", data);
+        });
+    </script>
+  </head>
+
+  <body>
+    <!-- Menu dynamique -->
+    <div id="header-placeholder"></div>
+    <script>
+      fetch("components/header.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
+    </script>
+
+    <!-- Citation d’accueil -->
+    <section class="bg-light text-center py-3">
+      <p id="citation-dynamique" class="fst-italic text-secondary mb-0">
+        « S’engager à chanter, c’est offrir sa voix à une lumière plus grande. »
+      </p>
+    </section>
+
+    <!-- Contenu principal -->
+    <main class="container py-5">
+      <h2 class="text-center mb-4">Nos Engagements</h2>
+
+      <p class="text-center mb-4">
+        Être membre du Chœur Artistique & Spirituel de Tanà, c’est plus qu’une pratique musicale — c’est un acte de foi, de discipline et d’unité.
+      </p>
+
+      <ul class="list-group list-group-flush mb-5 shadow-sm rounded">
+        <li class="list-group-item">🎵 Respect de l’esprit musical et spirituel du CAST</li>
+        <li class="list-group-item">⌛ Présence régulière aux répétitions, concerts et retraites vocales</li>
+        <li class="list-group-item">🫶 Fraternité et soutien entre choristes</li>
+        <li class="list-group-item">🌿 Disponibilité pour partager la mission lors d’événements extérieurs</li>
+        <li class="list-group-item">💫 Respect des engagements musicaux et des temps de prière chantée</li>
+      </ul>
+
+      <div class="text-center">
+        <p class="mb-3">Vous souhaitez rejoindre notre mission vocale ?</p>
+        <a href="contact.html" class="btn btn-primary">Demander à rejoindre le chœur</a>
+      </div>
+    </main>
+
+    <!-- Pied de page dynamique + scripts -->
+    <div id="footer-placeholder"></div>
+    <script>
+      fetch("components/footer.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+
+          const bootstrapScript = document.createElement("script");
+          bootstrapScript.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js";
+          document.body.appendChild(bootstrapScript);
+
+          bootstrapScript.onload = () => {
+            const mainScript = document.createElement("script");
+            mainScript.src = "assets/js/scripts.js";
+            document.body.appendChild(mainScript);
+          };
+        });
+    </script>
+  </body>
+</html>
