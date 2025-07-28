@@ -62,6 +62,8 @@ Cela garantit que vos clés API et données privées ne seront pas publiées par
 🌍 Déploiement
 Le site est déployé sur Vercel — lien du projet à ajouter ici.
 🕊️ Chaque mise en ligne est une bénédiction digitale.
+Le site est déployé sur Vercel — [accéder ici](https://cast-site.vercel.app)  
+🕊️ Chaque mise en ligne est une bénédiction digitale.
 
 🤝 Contribuer
 Toute contribution est la bienvenue : amélioration du code, idées artistiques, optimisation Firebase ou enrichissement poétique.
