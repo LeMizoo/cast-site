@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin — CAST</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 🎨 Chargement dynamique du head -->
+  <script>
+    fetch("components/head.html")
+      .then(res => res.text())
+      .then(data => {
+        document.head.insertAdjacentHTML("beforeend", data);
+      });
+  </script>
+</head>
+
+<body class="container py-4">
+
+  <!-- 🔝 Menu dynamique -->
+  <div id="header-placeholder"></div>
+  <script>
+    fetch("components/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+      });
+  </script>
+
+  <!-- 🔐 Vérification d'accès -->
+  <section id="auth-check" class="mb-4">
+    <p class="text-muted">Vérification des droits d’accès...</p>
+  </section>
+
+  <!-- 🎛️ Panneau Administrateur -->
+  <main class="admin-dashboard">
+    <h1>Panneau Administrateur</h1>
+
+    <!-- 📤 Zone d’upload -->
+    <section id="upload-zone">
+      <h2>Uploader un média</h2>
+      <input type="file" id="mediaInput">
+      <button id="uploadBtn">Téléverser</button>
+    </section>
+
+    <!-- 🖼️ Galerie media -->
+    <section id="media-gallery">
+      <h2>Médias existants</h2>
+      <div class="gallery-container"></div>
+    </section>
+
+    <!-- 🔑 Connexion -->
+    <section id="auth-section">
+      <h2>Connexion sécurisée</h2>
+      <input type="email" id="email" placeholder="Adresse email">
+      <input type="password" id="password" placeholder="Mot de passe">
+      <button id="loginBtn">Connexion</button>
+    </section>
+
+    <!-- 👥 Gestion des membres -->
+    <section id="panel-membres" style="display:none;">
+      <h2>Gestion des membres</h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Affiliation</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="table-body-membres">
+          <!-- Remplissage JS ici -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 📁 Fichiers soumis -->
+    <section id="panel-fichiers" style="display:none;" class="mt-5">
+      <h2>Fichiers soumis</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nom du fichier</th>
+            <th>Membre</th>
+            <th>Type</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="table-body-fichiers">
+          <!-- Remplissage JS ici -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- 🔻 Footer dynamique -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("components/footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      });
+  </script>
+
+  <!-- 🧠 Script JS dédié admin -->
+  <script type="module" src="assets/js/admin-scripts.js"></script>
+</body>
+</html>
