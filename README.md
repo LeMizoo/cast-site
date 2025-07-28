@@ -20,6 +20,11 @@ Ce projet repose sur du HTML, CSS et JavaScript natifs, enrichi par l’intégra
 - Vercel (déploiement)
 - Utilisation de composants HTML chargés dynamiquement (header, footer, head, galerie)
 
+![Licence MIT](https://img.shields.io/badge/Licence-MIT-green.svg)
+![Déploiement sur Vercel](https://img.shields.io/badge/Hosted%20on-Vercel-blue)
+![HTML](https://img.shields.io/badge/code-HTML5-orange)
+![Firebase](https://img.shields.io/badge/firebase-integrated-yellow)
+
 📁 Organisation du projet
 CAST-SITE-1/
 ├── assets/
