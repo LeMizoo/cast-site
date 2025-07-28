@@ -1,1 +1,14 @@
 .vercel
+# 🧼 Fichiers temporaires
+*.log
+*.tmp
+*.swp
+
+# 🖼️ Fichiers système/IDE
+.DS_Store
+Thumbs.db
+.vscode/
+
+# 🔐 Fichiers sensibles éventuels
+.env
+*.key
