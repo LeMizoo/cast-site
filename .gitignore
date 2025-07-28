@@ -1,14 +1,36 @@
-.vercel
-# 🧼 Fichiers temporaires
+# 🌍 Fichiers sensibles
+.env
+.env.local
+*.key
+*.pem
+serviceAccountKey.json
+
+# 📦 Dossiers Node ou dépendances potentielles
+node_modules/
+package-lock.json
+yarn.lock
+
+# 📁 Firebase
+.firebase/
+firestore.indexes.json
+firestore.rules
+
+# 🧪 Tests / couverture éventuelle
+coverage/
+*.spec.js
+*.test.js
+
+# 🖼️ IDE / système
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 🔍 Logs et fichiers temporaires
 *.log
 *.tmp
 *.swp
 
-# 🖼️ Fichiers système/IDE
-.DS_Store
-Thumbs.db
-.vscode/
-
-# 🔐 Fichiers sensibles éventuels
-.env
-*.key
+# 📤 Vercel / Next.js (si tu évolues vers React)
+.vercel/
+.next/
+out/
